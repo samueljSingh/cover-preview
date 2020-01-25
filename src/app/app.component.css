@@ -1,0 +1,33 @@
+.cover-preview-container {
+    background-color: #cccccc;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    padding: 20px;
+    width: 100%;
+}
+
+.cover-preview-container .frame {
+    background-color: #ffffff;
+    width: 80%;
+    height: 100%;
+    margin: 0;
+    margin-right: 20px;
+    padding: 0;
+    text-align: center;
+}
+
+.cover-preview-container .toolbar {
+    border: 1px solid #ffffff;
+    padding: 0 20px;
+    height: 100%;
+    width: 20%;
+}
+
+.cover-preview-container .cover-preview-canvas {
+    width: 400px;
+    height: 94%;
+    margin: 10px 0px;
+    border: 2px solid #cccccc;
+    border-radius: 5px;
+}
