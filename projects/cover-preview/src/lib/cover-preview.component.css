@@ -1,0 +1,76 @@
+    .cover-preview-container {
+      background-color: #cccccc;
+      box-sizing: border-box;
+      display: flex;
+      height: 590px;
+      padding: 20px;
+      width: 750px;
+    }
+
+    .cover-preview-container .frame {
+      background-color: #fff;
+      width: 465px;
+      height: 550px;
+      margin: 0 20px 0 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .cover-preview-container .toolbar {
+      border: 1px solid #ffffff;
+      height: 550px;
+      width: 222px;
+    }
+
+    .cover-preview-container .cover-preview-phone-model {
+      position: absolute;
+      width: 464px;
+      height: 500px;
+      left: 20px;
+      top: 40px;
+      z-index: 5;
+    }
+
+    :host::ng-deep .cover-preview-container .cover-preview-upper-canvas {
+      border: 2px solid #cccccc;
+      border-radius: 5px;
+      margin: 0 auto;
+      position: absolute !important;
+      left: 50px;
+      top: 40px;
+      z-index: 10;
+    }
+
+    :host::ng-deep .cover-preview-container .cover-preview-lower-canvas {
+      border: 2px solid #cccccc;
+      border-radius: 5px;
+      margin: 0 auto;
+      position: absolute !important;
+      left: 50px;
+      top: 40px;
+      z-index: 1;
+    }
+
+    .cover-preview-container .upload-cover {
+      width: 88%;
+      margin: 7px;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      padding: 6px;
+    }
+
+    .cover-preview-container .upload-cover-ok {
+      width: 94%;
+      padding: 6px;
+      margin: 7px;
+      border-radius: 5px;
+      border: 1px solid #ffffff;
+    }
+
+    .cover-preview-container .upload-cover-cancel {
+      width: 94%;
+      padding: 6px;
+      margin: 7px;
+      border-radius: 5px;
+      border: 1px solid #ffffff;
+    }

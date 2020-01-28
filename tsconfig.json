@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "cover-preview": [
+        "dist/cover-preview"
+      ],
+      "cover-preview/*": [
+        "dist/cover-preview/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

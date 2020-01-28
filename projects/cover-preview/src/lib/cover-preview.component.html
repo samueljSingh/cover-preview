@@ -1,0 +1,16 @@
+<div class="cover-preview-container">
+  <div class="frame">
+    <canvas id="cover-preview-upper-canvas"></canvas>
+    <img class="cover-preview-phone-model" [src]="config.phoneURL" alt="Phone Model">
+    <canvas id="cover-preview-lower-canvas"></canvas>
+  </div>
+  <div class="toolbar">
+    <input class="upload-cover" type="file" (change)="onUploadCover($event.target.files)"/>
+    <button class="upload-cover-ok" (click)="applyCover()">
+      Apply
+    </button>
+    <button class="upload-cover-cancel">
+      Cancel
+    </button>
+  </div>
+</div>

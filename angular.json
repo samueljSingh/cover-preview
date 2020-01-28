@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "cover-preview": {
+    "cover-preview-demo": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/cover-preview",
+            "outputPath": "dist/cover-preview-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "cover-preview:build"
+            "browserTarget": "cover-preview-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "cover-preview:build:production"
+              "browserTarget": "cover-preview-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "cover-preview:build"
+            "browserTarget": "cover-preview-demo:build"
           }
         },
         "test": {
@@ -113,15 +113,50 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "cover-preview:serve"
+            "devServerTarget": "cover-preview-demo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "cover-preview:serve:production"
+              "devServerTarget": "cover-preview-demo:serve:production"
             }
           }
         }
       }
+    },
+    "cover-preview": {
+      "projectType": "library",
+      "root": "projects/cover-preview",
+      "sourceRoot": "projects/cover-preview/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/cover-preview/tsconfig.lib.json",
+            "project": "projects/cover-preview/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/cover-preview/src/test.ts",
+            "tsConfig": "projects/cover-preview/tsconfig.spec.json",
+            "karmaConfig": "projects/cover-preview/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/cover-preview/tsconfig.lib.json",
+              "projects/cover-preview/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
-  "defaultProject": "cover-preview"
+  "defaultProject": "cover-preview-demo"
 }

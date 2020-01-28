@@ -1,32 +1,22 @@
-import { Component, OnInit, Input } from '@angular/core';
-declare var fabric: any;
+import { Component } from '@angular/core';
+import { CoverPreviewConfig } from 'projects/cover-preview/src/public-api';
+import { DomSanitizer } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  public canvasID: string;
-  private canvas: any;
+  public config: CoverPreviewConfig;
 
-  @Input()
-  set coverURL(URL) {
-    if (URL) {
-      fabric.Image.fromURL(URL, function (oImg) {
-        this.canvas.add(oImg);
-      });
-    }
+  constructor(private domSanitizer: DomSanitizer){
+    this.config = {
+      phoneURL: 'assets/honor_7x.jpg',
+      coverURL: 'assets/cover-min.jpg',
+    };
   }
-
-  constructor() {
-    this.canvasID = 'conver-preview-canvas-' + new Date().getTime();
-  }
-
-  ngOnInit(): void {
-    this.canvas = new fabric.Canvas(this.canvasID);
-    console.log(this.canvas);
-  }
-  title = 'cover-preview';
+  
 
 }
